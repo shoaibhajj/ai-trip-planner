@@ -1,0 +1,2 @@
+    export const AiPrompt =
+    "Generate Travel Plan for Location : {locationTitle} for {numberOfDays} Days for {traveler} with  a {budget} budget, Give me a Hotels options list with HotelName, Hotel adresses, Pirce, Hotel image url, geo coodinates,raing,descriptions and suggest itinerary with placeName, PlaceDetails,Plase ImageUrl, Geo Coodinates, tickets Pricing, Time t travel each of location for {totalDays} days with each day plan with best time to visit in JSON format ";
