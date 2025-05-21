@@ -10,7 +10,7 @@ function MyTrips() {
   console.log(loading);
 
   const { user } = useUser();
-  const [trips, setTrips] = useState<DocumentData>([]);
+  const [trips, setTrips] = useState<DocumentData[]>([]);
 
   const getUserTrips = async () => {
     setLoading(true);
@@ -51,12 +51,17 @@ function MyTrips() {
     }
   }, [user]);
 
+  console.log(trips);
+  const reversedTrips = [...trips].reverse();
+
+
+
   return (
     <div className=" sm:p-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
       <h2 className="font-bold text-3xl">My Trips</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-10">
-        {trips.length > 0
-          ? trips.map((trip: DocumentData, index: number) => (
+        {reversedTrips.length > 0
+          ? reversedTrips.map((trip: DocumentData, index: number) => (
               <TripCardItem trip={trip} key={trip.id || index} />
             ))
           : Array.from({ length: 5 }).map((_, index) => (
